@@ -1,0 +1,22 @@
+{
+    "name": "netlogix/compressingfilesystemstorage",
+    "description": "Flow Package that provides a WritableFileSystemStorage with zlib Compression",
+    "type": "neos-package",
+    "keywords": ["neos", "resources", "storage", "compression", "zlib"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "neos/flow": "^5.0 || ^6.0 || ^7.0",
+        "neos/utility-files": "^5.0 || ^6.0 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netlogix\\CompressingFileSystemStorage\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Netlogix.CompressingFileSystemStorage"
+        }
+    }
+}
