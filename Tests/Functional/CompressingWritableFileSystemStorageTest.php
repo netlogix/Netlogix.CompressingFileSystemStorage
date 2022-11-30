@@ -45,6 +45,10 @@ class CompressingWritableFileSystemStorageTest extends FunctionalTestCase
      */
     public function md5_of_the_original_file_is_kept(string $streamWrapper, string $collectionName): void
     {
+        if (!method_exists(PersistentResource::class, 'setMd5')) {
+            $this->markTestSkipped('Flow Version does no longer have support for MD5s of PersistentResources');
+        }
+
         $this->skipIfStreamWrapperIsMissing($streamWrapper);
 
         $resource = $this->importResource($collectionName);
@@ -143,9 +147,9 @@ class CompressingWritableFileSystemStorageTest extends FunctionalTestCase
         }
 
         if ($streamWrapper === 'compress.zlib') {
-            self::assertStringContainsString('gzip', $output);
+            self::assertTrue(strpos($output, 'gzip') !== false, 'Failed asserting that file is compressed with gzip');
         } elseif ($streamWrapper === 'compress.bzip2') {
-            self::assertStringContainsString('bzip2', $output);
+            self::assertTrue(strpos($output, 'bzip2') !== false, 'Failed asserting that file is compressed with bzip2');
         } else {
             $this->fail('No expectation for file compression was given');
         }

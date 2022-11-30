@@ -70,7 +70,9 @@ class CompressingWritableFileSystemStorage extends WritableFileSystemStorage
         $resource->setFileSize($fileSize);
         $resource->setCollectionName($collectionName);
         $resource->setSha1($sha1Hash);
-        $resource->setMd5($md5Hash);
+        if (method_exists(PersistentResource::class, 'setMd5')) {
+            $resource->setMd5($md5Hash);
+        }
 
         return $resource;
     }
