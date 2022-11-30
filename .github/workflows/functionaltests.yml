@@ -42,7 +42,7 @@ jobs:
                       php-${{ matrix.php-version }}-flow-
 
             - name: "[2/5] Create composer project - No install"
-              run: composer create-project neos/flow-base-distribution ${{ env.FLOW_DIST_FOLDER }} --prefer-dist --no-progress --no-install "^${{ matrix.flow-version }}"
+              run: composer create-project neos/flow-base-distribution ${{ env.FLOW_DIST_FOLDER }} --prefer-dist --no-progress --no-install "~${{ matrix.flow-version }}.0"
 
             - name: "[3/5] Allow neos composer plugin"
               run: composer config --no-plugins allow-plugins.neos/composer-plugin true
