@@ -9,6 +9,10 @@
         "neos/flow": "^5.3 || ^6.3 || ^7.3 || ^8.1",
         "neos/utility-files": "^5.3 || ^6.3 || ^7.3 || ^8.1"
     },
+    "suggest": {
+        "ext-zlib": "For using zlib compression",
+        "ext-bz2": "For using bzip2 compression"
+    },
     "autoload": {
         "psr-4": {
             "Netlogix\\CompressingFileSystemStorage\\": "Classes/"

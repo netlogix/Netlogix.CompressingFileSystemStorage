@@ -12,10 +12,6 @@ class CompressingWritableFileSystemStorageTest extends FunctionalTestCase
 {
 
     private const FILE_IN = __DIR__ . '/../Fixtures/in';
-    private const FILES_OUT = [
-        'compress.zlib' => __DIR__ . '/../Fixtures/out_zlib',
-        'compress.bzip2' => __DIR__ . '/../Fixtures/out_bzip2',
-    ];
     private const COLLECTION_NAME_ZLIB = 'nlxCompressingStorage_zlib';
     private const COLLECTION_NAME_BZIP2 = 'nlxCompressingStorage_bzip2';
 

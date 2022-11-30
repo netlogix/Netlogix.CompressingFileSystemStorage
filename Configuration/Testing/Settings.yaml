@@ -5,7 +5,7 @@ Neos:
         nlxCompressingFileSystemStorage_zlib:
           storage: Netlogix\CompressingFileSystemStorage\CompressingWritableFileSystemStorage
           storageOptions:
-            path: '%FLOW_PATH_DATA%Persistent/Test/CompressingWritableFileSystemStorage_zip/'
+            path: '%FLOW_PATH_DATA%Persistent/Test/CompressingWritableFileSystemStorage_zlib/'
             streamWrapper: 'compress.zlib'
 
         nlxCompressingFileSystemStorage_bzip2:
@@ -18,8 +18,8 @@ Neos:
         nlxCompressingFileSystemTarget_zlib:
           target: Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget
           targetOptions:
-            path: '%FLOW_PATH_WEB%_Resources/Test/CompressingWritableFileSystemStorage_zip/'
-            baseUri: '_Resources/Test/CompressingWritableFileSystemStorage_zip/'
+            path: '%FLOW_PATH_WEB%_Resources/Test/CompressingWritableFileSystemStorage_zlib/'
+            baseUri: '_Resources/Test/CompressingWritableFileSystemStorage_zlib/'
         nlxCompressingFileSystemTarget_bzip2:
           target: Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget
           targetOptions:
