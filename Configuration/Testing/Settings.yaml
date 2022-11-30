@@ -1,0 +1,35 @@
+Neos:
+  Flow:
+    resource:
+      storages:
+        nlxCompressingFileSystemStorage_zlib:
+          storage: Netlogix\CompressingFileSystemStorage\CompressingWritableFileSystemStorage
+          storageOptions:
+            path: '%FLOW_PATH_DATA%Persistent/Test/CompressingWritableFileSystemStorage_zip/'
+            streamWrapper: 'compress.zlib'
+
+        nlxCompressingFileSystemStorage_bzip2:
+          storage: Netlogix\CompressingFileSystemStorage\CompressingWritableFileSystemStorage
+          storageOptions:
+            path: '%FLOW_PATH_DATA%Persistent/Test/CompressingWritableFileSystemStorage_bzip2/'
+            streamWrapper: 'compress.bzip2'
+
+      targets:
+        nlxCompressingFileSystemTarget_zlib:
+          target: Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget
+          targetOptions:
+            path: '%FLOW_PATH_WEB%_Resources/Test/CompressingWritableFileSystemStorage_zip/'
+            baseUri: '_Resources/Test/CompressingWritableFileSystemStorage_zip/'
+        nlxCompressingFileSystemTarget_bzip2:
+          target: Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget
+          targetOptions:
+            path: '%FLOW_PATH_WEB%_Resources/Test/CompressingWritableFileSystemStorage_bzip2/'
+            baseUri: '_Resources/Test/CompressingWritableFileSystemStorage_bzip2/'
+
+      collections:
+        nlxCompressingStorage_zlib:
+          storage: nlxCompressingFileSystemStorage_zlib
+          target: nlxCompressingFileSystemTarget_zlib
+        nlxCompressingStorage_bzip2:
+          storage: nlxCompressingFileSystemStorage_bzip2
+          target: nlxCompressingFileSystemTarget_bzip2
