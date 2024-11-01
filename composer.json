@@ -5,9 +5,9 @@
     "keywords": ["neos", "resources", "storage", "compression", "zlib"],
     "license": "MIT",
     "require": {
-        "php": "^7.4 || ^8.0",
-        "neos/flow": "^5.3 || ^6.3 || ^7.3 || ^8.1",
-        "neos/utility-files": "^5.3 || ^6.3 || ^7.3 || ^8.1"
+        "php": "^8.0",
+        "neos/flow": "^8.3 || ^9.0",
+        "neos/utility-files": "^8.3 || ^9.0"
     },
     "suggest": {
         "ext-zlib": "For using zlib compression",
